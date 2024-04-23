@@ -17,22 +17,6 @@ topMenuEl.setAttribute('class', 'flex-around');
 
 //Part 3: Adding Menu Buttons
 // Menu data structure
-// const menuLinks = [
-//   { text: 'about', href: '/about' },
-//   { text: 'catalog', href: '/catalog' },
-//   { text: 'orders', href: '/orders' },
-//   { text: 'account', href: '/account' },
-// ];
-// menuLinks.forEach(link=>{
-//   const a = document.createElement('a')
-//   a.setAttribute('href', link.href) //setting attribute to each anchor
-//   a.textContent = link.text;
-//   topMenuEl.appendChild(a)
-// })
-
-// Part 4: Adding Menu Interaction
-// In order to add submenu links, we will need to restructure the menuLinks array within index.js. Update the menuLinks array to the following:
-
 const menuLinks = [
   {text: 'about',  href: '/about'},
   {text: 'catalog', href: '#', subLinks: [
@@ -50,6 +34,17 @@ const menuLinks = [
     {text: 'sign out', href: '/account/signout'},
   ]},
 ];
+
+menuLinks.forEach(link=>{
+  const a = document.createElement('a')
+  a.setAttribute('href', link.href) //setting attribute to each anchor
+  a.textContent = link.text;
+  topMenuEl.appendChild(a)
+})
+
+// Part 4: Adding Menu Interaction
+// In order to add submenu links, we will need to restructure the menuLinks array within index.js. Update the menuLinks array to the following:
+
 
 // Part 3 cont'd. Creating the Submenu
 // Select and cache the <nav id="sub-menu"> element in a variable named subMenuEl.
